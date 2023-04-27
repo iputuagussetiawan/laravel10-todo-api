@@ -18,8 +18,6 @@ class TaskController extends Controller
         return TaskResource::collection(Task::all());
     }
 
-   
-
     /**
      * Store a newly created resource in storage.
      */
