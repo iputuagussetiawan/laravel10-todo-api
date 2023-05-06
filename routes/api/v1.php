@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\V1\CompleteTaskController;
+use App\Http\Controllers\Api\v1\IsActiveProductController;
 use App\Http\Controllers\Api\V1\ProductController;
 use App\Http\Controllers\Api\V1\TaskController;
 use App\Http\Controllers\Api\V1\UserController;
@@ -17,4 +18,5 @@ Route::prefix('v1')->group(function(){
 
 Route::prefix('v1')->group(function(){
     Route::apiResource('products',ProductController::class);
+    Route::patch('/products/{product}/is_active', IsActiveProductController::class);
 });
