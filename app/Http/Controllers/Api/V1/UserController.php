@@ -25,6 +25,13 @@ class UserController extends Controller
     public function store(StoreUserRequest $request){
         $user= User::create($request->validated());
         return UserResource::make($user);
+
+        $user = User::create($request->getData());
+
+        return response()->json([
+            'user' => $user,
+            'token' => $user->createToken('laravel_api_token')->plainTextToken
+        ]);
     }
 
 }
