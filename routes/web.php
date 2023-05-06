@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -25,3 +26,6 @@ Route::prefix('auth')->group(function () {
     Route::post('/logout', LogoutController::class);
     Route::post('/register', RegisterController::class)->middleware('guest');;
 });
+
+
+Route::get('{view}',ApplicationController::class)->where('view','(.*)');
