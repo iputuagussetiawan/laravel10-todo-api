@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -29,3 +30,6 @@ Route::prefix('auth')->group(function () {
 
 
 Route::get('{view}',ApplicationController::class)->where('view','(.*)');
+
+
+
